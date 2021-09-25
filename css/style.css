@@ -1,0 +1,632 @@
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@200;300;400;600&family=Nunito:wght@200;300;400;600;700&display=swap");
+
+:root {
+  --yellow: #f9ca24;
+}
+
+/* El selector ::selection CSS pseudo-elemento aplica reglas a 
+una porción de un documento que ha sido destacado 
+(por ejemplo: selección con el mouse o algún otro puntero
+ en un dispositivo) del usuario. */
+::selection {
+  background: var(--yellow);
+  color: #333;
+}
+
+html {
+  font-size: 62.5%;
+  overflow-x: hidden;
+  padding-left: 35rem;
+}
+
+/* Tamaño de la barra */
+html::-webkit-scrollbar {
+  /*Em tiene referencia el tamaño de la fuente del elemento donde 
+    se usa esa unidad, rem tiene referencia al tamaño de la fuente 
+    definido en el elemento root.*/
+  width: 1.2rem;
+}
+
+/* barra color fondo*/
+html::-webkit-scrollbar-track {
+  background: #222;
+}
+
+/* Barra que se mueve */
+html::-webkit-scrollbar-thumb {
+  background: var(--yellow);
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  text-transform: capitalize;
+  transition: all 0.2s linear;
+  outline: none;
+  border: none;
+  font-family: "Nunito", sans-serif;
+}
+
+body {
+  background: #111;
+  overflow-x: hidden;
+}
+
+section {
+  min-height: 100vh;
+  padding: 1rem;
+}
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  height: 100%;
+  width: 35rem;
+  background: #1a1a1a;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /*Especifica el factor de crecimiento de un elemento flexible */
+  flex-flow: column;
+  text-align: center;
+}
+
+header .user img {
+  max-width: 29rem;
+  height: 24rem;
+  border-radius: 60%;
+  object-fit: cover;
+  margin-bottom: 1rem;
+  border: 0.2rem solid var(--yellow);
+}
+
+header .user .name {
+  font-size: 3.5rem;
+  color: #fff;
+}
+
+header .user .post {
+  font-size: 2.5rem;
+  color: #eee;
+}
+
+header .navbar {
+  width: 100%;
+  margin: -2rem;
+}
+
+header .navbar ul {
+  list-style: none;
+  padding: 1rem 3rem;
+}
+
+.btn {
+  padding: 1rem 1rem;
+  background: #333;
+  color: #fff;
+  width: auto;
+  cursor: pointer;
+  margin-top: 1rem;
+  font-size: 2rem;
+  border-radius: 5rem;
+}
+
+.btn:hover {
+  background: var(--yellow);
+}
+
+.btn i {
+  padding: 0 0.2rem;
+  font-size: 1.8rem;
+}
+
+header .navbar ul li a {
+  display: block;
+
+  padding: 1rem;
+  margin: 1.5rem 0;
+  background: #333;
+  color: #fff;
+  font-size: 2rem;
+  border-radius: 5rem;
+}
+
+header .navbar ul li a:hover {
+  background: var(--yellow);
+}
+
+#menu {
+  position: fixed;
+  top: 2rem;
+  right: 2rem;
+  background: #333;
+  color: #fff;
+  cursor: pointer;
+  font-size: 2.5rem;
+  padding: 1rem 1.5rem;
+  z-index: 1000;
+  display: none;
+}
+
+.home {
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  padding: 0 15rem;
+}
+
+.home h3 {
+  font-size: 2.5rem;
+  color: #fff;
+}
+
+.home a {
+  width: 14rem;
+}
+
+.home h1 {
+  font-size: 5rem;
+  color: #fff;
+}
+
+.home h3 {
+  text-transform: none;
+}
+
+.home span {
+  color: var(--yellow);
+}
+
+.home p {
+  font-size: 2rem;
+  color: #eee;
+  padding: 1rem 0;
+
+  text-transform: none;
+}
+
+/* About */
+
+.heading {
+  text-align: center;
+  margin: 0 6rem;
+  font-size: 4rem;
+  padding: 1rem;
+  border-bottom: 0.2rem solid #fff4;
+  color: #fff;
+}
+
+.heading span {
+  color: var(--yellow);
+}
+
+.about .row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* especifica si los elementos "hijos" son obligados a permanecer 
+    en una misma línea o pueden fluir en varias líneas */
+  flex-wrap: wrap;
+  padding: 1rem 0;
+}
+
+.about .row .info {
+  /* Flex está separando los items */
+  flex: 1 1 48rem;
+  padding: 2rem 1rem;
+}
+
+.about .row .info h3 {
+  font-size: 2rem;
+  color: var(--yellow);
+  padding: 1rem 0;
+  font-weight: normal;
+}
+
+.about .row .info h3 span {
+  color: #eee;
+  padding: 0 0.5rem;
+}
+
+.about .row .counter {
+  flex: 1 1 48rem;
+  display: flex;
+  justify-content: center;
+  /* especifica si los elementos "hijos" son obligados a permanecer 
+      en una misma línea o pueden fluir en varias líneas */
+  flex-wrap: wrap;
+}
+
+.about .row .counter .box {
+  width: 20rem;
+  background: #222;
+  text-align: center;
+  padding: 2rem;
+  margin: 2rem;
+  border-radius: 3rem;
+}
+
+.about .row .counter .box span {
+  font-size: 4rem;
+  color: var(--yellow);
+}
+
+.about .row .counter .box h3 {
+  font-size: 2rem;
+  color: #fff;
+}
+
+/* Education  */
+
+.about .row .box-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  padding: 1rem 0;
+  padding-left: 3rem;
+}
+
+.about .row .box-container .box {
+  width: 27rem;
+  height: 20rem;
+  margin: 4rem 1rem;
+  padding-left: 4rem;
+  border-left: 0.2rem solid #fff;
+  position: relative;
+}
+
+.about .row .box-container .box span {
+  font-size: 1.3rem;
+  background: #222;
+  color: #fff;
+  border-radius: 5rem;
+  padding: 0.5rem 2.5rem;
+}
+
+.about .row .box-container .box h3 {
+  font-size: 2rem;
+  color: #fff;
+  padding-top: 1.5rem;
+}
+
+.about .row .box-container .box p {
+  font-size: 1.4rem;
+  padding: 1rem 0;
+  color: #fff;
+}
+
+.about .row .box-container .box i {
+  position: absolute;
+  top: -1.5rem;
+  left: -2.5rem;
+  width: 5rem;
+  border-radius: 50%;
+  /*Establece la altura de una casilla remarcada por líneas */
+  line-height: 5rem;
+  text-align: center;
+  font-size: 2rem;
+  color: #fff;
+  background-color: var(--yellow);
+}
+
+/* Experiencia */
+
+.experiencia .row {
+  background: #333;
+  width: 35rem;
+  margin-left: 5rem;
+  margin-top: 5rem;
+  padding: 2rem;
+  border-radius: 3rem;
+  
+}
+
+.experiencia .row h2 {
+  color: var(--yellow);
+  font-size: 3rem;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+
+.experiencia .row h3 {
+  font-size: 1.8rem;
+  color: white;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  padding-bottom: 1rem;
+}
+
+.experiencia .row p {
+  font-size: 1.8rem;
+  color: white;
+
+  align-items: center;
+  justify-content: center;
+}
+
+/* Portafolio */
+
+.portafolio .box-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* Hace que los contenedores vayan abajo */
+  flex-wrap: wrap;
+  padding: 2rem 0;
+}
+
+.portafolio .box-container .box img {
+  width: 25rem;
+  display: flex;
+  margin: 2rem 5rem;
+  border-radius: 3rem;
+  overflow: hidden;
+  cursor: pointer;
+  object-fit: cover;
+}
+
+/* Animación */
+.portafolio .box-container .box:hover img {
+  transform: scale(1.2);
+}
+
+/* Contact */
+
+.contact .row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.contact .row .content {
+  flex: 1 1 30rem;
+  padding: 4rem;
+  padding-bottom: 0;
+}
+
+
+
+.contact .row form .message {
+  height: 15rem;
+  resize: none;
+}
+
+.contact .row .content .title {
+  text-transform: uppercase;
+  font-size: 3rem;
+  color: #fff;
+  padding-bottom: 2rem;
+}
+
+.contact .row .content .info i {
+  color: var(--yellow);
+  padding-right: 1rem;
+}
+
+.contact .row .content .info h3 {
+  display: flex;
+  align-items: center;
+  font-size: 1.4rem;
+  color: #eee;
+  text-transform: none;
+  padding: 1rem 0;
+  font-weight: normal;
+}
+
+.contact .row .content .info svg {
+  padding-right: 1rem;
+  color: var(--yellow);
+}
+
+.svg {
+  color: var(--yellow);
+}
+
+.top{
+  position: fixed;
+  font-size: 3rem;
+  bottom: 7.5rem; right: 2rem;
+  z-index: 100;
+  color: #fff;
+}
+/* media queries */
+
+@media (max-width: 1227px) {
+  html {
+    font-size: 55%;
+  }
+  .home {
+    padding: 1rem 4rem;
+  }
+
+  .about .row .info {
+    text-align: center;
+    display: inline;
+  }
+
+  .experiencia .row p {
+    font-size: 1.8rem;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 991px) {
+  header {
+    left: -120%;
+  }
+
+  .home h3 {
+    font-size: 3.5rem;
+    display: flex;
+    justify-content: center;
+    color: #f9ca24;
+    padding-bottom: 20px;
+  }
+
+  #menu {
+    display: block;
+  }
+
+  header.toggle {
+    left: 0%;
+  }
+
+  body {
+    padding: 0;
+  }
+  html {
+    padding-left: 5rem;
+    padding-right: 3.5rem;
+  }
+
+  .about .row .info {
+    text-align: center;
+  }
+
+  .about .row .info h3 {
+    font-size: 3rem;
+  }
+
+  .experiencia .row {
+    align-items: center;
+    align-items: center;
+  }
+
+  .experiencia .row .texto p {
+    align-items: center;
+    align-items: center;
+  }
+
+  .experiencia .row p {
+    font-size: 1.8rem;
+    color: white;
+
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 768px) {
+  html {
+    font-size: 50%;
+  }
+
+  .home {
+    padding: 0;
+  }
+
+  .about .row .info {
+    width: 100%;
+    text-align: center;
+  }
+
+  .about .row .info h3 {
+    font-size: 3rem;
+  }
+
+  .education .box-container .box {
+    width: 100%;
+  }
+
+  .portafolio .box-container .box {
+    width: 100%;
+    justify-content: center;
+    object-fit: cover;
+  }
+
+  .portafolio .box-container .box img {
+    width: 80%;
+    justify-content: center;
+
+    /* Centrando la imagen */
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .contact .row .content .title {
+    font-size: 2.9rem;
+    text-align: center;
+    justify-content: center;
+  }
+
+  .contact .row .content .info h3 {
+    font-size: 2.0rem;
+    justify-content: center;
+  }
+
+  .contact .row .content {
+    text-align: center;
+    justify-content: center;
+    display: block;
+  }
+
+  .contact .row .content .info a {
+    width: 30rem;
+    text-align: center;
+    justify-content: center;
+  }
+
+  .experiencia .row {
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    margin-left: 0;
+  }
+
+  .experiencia .row .texto {
+    align-items: center;
+    justify-content: center;
+  }
+
+  .experiencia .row .texto p {
+    align-items: center;
+    align-items: center;
+  }
+
+ 
+}
+
+@media (max-width: 460px) {
+  header {
+    width: 100vw;
+  }
+
+  .heading {
+    margin: 0 3rem;
+  }
+
+  .about .row .info h3 {
+    font-size: 2.25rem;
+  }
+
+  .about .row .counter .box {
+    width: 100%;
+  }
+
+  .portafolio .box-container .box {
+    width: 100%;
+  }
+
+  .experiencia .row {
+    width: 100%;
+
+    margin-left: 0;
+  }
+
+  .experiencia .row .texto p {
+    font-size: 1.8rem;
+
+    align-items: center;
+    display: flex;
+    justify-content: center;
+  }
+}
