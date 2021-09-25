@@ -430,6 +430,10 @@ header .navbar ul li a:hover {
   color: var(--yellow);
 }
 
+.contact .row .row a{
+  margin-left: 2rem;
+} 
+
 .top{
   position: fixed;
   font-size: 3rem;
@@ -514,6 +518,11 @@ header .navbar ul li a:hover {
     align-items: center;
     justify-content: center;
   }
+
+  .contact .row .row a{
+    margin-left: 2rem;
+  } 
+
 }
 
 @media (max-width: 768px) {
@@ -592,6 +601,11 @@ header .navbar ul li a:hover {
     align-items: center;
   }
 
+  .contact .row .row a{
+    margin-left: 2rem;
+  } 
+
+
  
 }
 
@@ -615,6 +629,10 @@ header .navbar ul li a:hover {
   .portafolio .box-container .box {
     width: 100%;
   }
+
+  .contact .row .row a{
+    margin-left: 2rem;
+  } 
 
   .experiencia .row {
     width: 100%;
